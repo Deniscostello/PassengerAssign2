@@ -1,12 +1,17 @@
 package ie.atu.Passenger2;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.*;
+
 @Getter
 @Setter
 @NoArgsConstructor
+@Entity
+@Table
 public class Passenger {
     //instance variables
     private String Title;
@@ -14,6 +19,9 @@ public class Passenger {
     private String ID;
     private String Phone;
     private int Age;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long count;
 
     public Passenger(String title, String name, String id, String phone, int age) {
         setTitle(title);
