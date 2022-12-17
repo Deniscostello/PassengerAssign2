@@ -32,7 +32,17 @@ public class PassengerController {
         myService.deletePassenger(count);
     }
 
+    @GetMapping("/age")
+    public List<Passenger> getPassengerByAge(@RequestParam(name = "age_start") int age1, @RequestParam(name= "age_end") int age2)
+    {
+        return myService.findPassengerByAgeRange(age1, age2);
+    }
 
+    @GetMapping("/phone")
+    public  List<Passenger> getPassengerByPhone(@RequestParam(name = "phone_start") int phone1, @RequestParam(name= "phone_end") int phone2)
+    {
+        return myService.findPassengerByAgeRange(phone1, phone2);
+    }
 
     @GetMapping("/{passengerID}")
     public Passenger getPassenger(@PathVariable String passengerID) {
