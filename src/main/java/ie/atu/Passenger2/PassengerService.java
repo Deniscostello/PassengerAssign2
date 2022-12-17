@@ -25,4 +25,8 @@ public class PassengerService {
         Passenger myPassenger = new Passenger("Mr", "Paul", "1234567891", "09871234", 23);
         return myPassenger;
     }
+
+    public void deletePassenger(Long count) {
+        passengerRepo.deleteById(count);
+    }
 }

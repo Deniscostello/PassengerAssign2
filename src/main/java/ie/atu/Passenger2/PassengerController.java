@@ -26,6 +26,13 @@ public class PassengerController {
         myService.savePassenger(passenger);
     }
 
+    @DeleteMapping("delete/{count}")
+    public void deletePassenger(@PathVariable("count") Long count)
+    {
+        myService.deletePassenger(count);
+    }
+
+
 
     @GetMapping("/{passengerID}")
     public Passenger getPassenger(@PathVariable String passengerID) {
