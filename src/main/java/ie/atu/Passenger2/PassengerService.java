@@ -17,6 +17,10 @@ public class PassengerService {
 
     }
 
+    public void savePassenger(Passenger passenger){
+        passengerRepo.save(passenger);
+    }
+
     public Passenger getPassenger(String passengerID) {
         Passenger myPassenger = new Passenger("Mr", "Paul", "1234567891", "09871234", 23);
         return myPassenger;
